@@ -12,7 +12,6 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <Header />
-        <h1>E-Comm Project</h1>
         <Route path="/login">
             <Login />
         </Route>
