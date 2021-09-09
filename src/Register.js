@@ -21,8 +21,8 @@ function Register() {
             }
         })
 
-        result = await JSON.stringify(result)
-        localStorage.setItem("userinfo",result)
+        result = await result.json();
+        localStorage.setItem("userinfo",JSON.stringify(result))
         history.push('/add')
     }
     return (
