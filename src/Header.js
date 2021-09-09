@@ -8,10 +8,20 @@ function Header()
     <Container>
     <Navbar.Brand href="#home">E-Commerce</Navbar.Brand>
     <Nav className="me-auto">
-        <Link to="/add">Add Products</Link>
-        <Link to="/update">Update Products</Link>
-        <Link to="/login">Login</Link>
-        <Link to="/register">Register</Link>
+        {
+            localStorage.getItem('userinfo') ? 
+            <>
+                <Link to="/add">Add Products</Link>
+                <Link to="/update">Update Products</Link>
+            </>
+            :
+            <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+            </>
+        }
+        
+        
     </Nav>
     </Container>
   </Navbar>

@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import { Button } from "react-bootstrap";
-
+import Protected from './Protected'
 import { BrowserRouter,Route } from 'react-router-dom';
 import Login from './Login';
 import Register from './Register';
@@ -19,10 +19,11 @@ function App() {
             <Register />
         </Route>
         <Route path="/add">
-            <AddProduct />
+            <Protected Cmp={AddProduct} />
+            
         </Route>
         <Route path="/update">
-            <UpdateProduct />
+          <Protected Cmp={UpdateProduct} />
         </Route>
       </BrowserRouter>
     </div>

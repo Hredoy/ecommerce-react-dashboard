@@ -1,20 +1,21 @@
 import Header from './Header';
 import React , {useState,useEffect} from 'react';
 import { useHistory } from 'react-router-dom';
-function Login()
+function Protected(props)
 {
+    let Cmp = props.Cmp;
     useEffect(()=>{
-        if(localStorage.getItem('userinfo'))
+        if(!localStorage.getItem('userinfo'))
         {
-            history.push('/add')
+            history.push('/register')
         }
     })
     const history = useHistory();
     return (
         <div>
-            <Header />
-            <h1>Login Page</h1>
+            <Cmp />
+           
         </div>
     );
 }
-export default Login
+export default Protected
